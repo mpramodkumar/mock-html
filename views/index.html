@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Mock BCTS</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cloud.typenetwork.com/projects/657/fontface.css/" type="text/css" />
+		<link rel="stylesheet" href="/stylesheets/dashboard.css">
+		<!-- Custom styles for table -->
+		<link rel="stylesheet" href="/stylesheets/table.css">
+
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('div[id^=tab]').hide();
+				$('#tab1').show();
+				$('#tabs a').click(function () {
+					$( "#dialogreact" ).dialog( "close" );
+					$( "#dialog" ).dialog( "close" );
+					scrollToTop();
+					var tab_id = $(this).attr('data-section');
+					$('div[id^=tab]').hide();
+					$(tab_id).show();
+				});
+				$(function () {
+					$(document).on('scroll', function () {
+						if ($(window).scrollTop() > 100) {
+							$('.scroll-top-wrapper').addClass('show');
+						} else {
+							$('.scroll-top-wrapper').removeClass('show');
+						}
+					});
+					$('.scroll-top-wrapper').on('click', scrollToTop);
+				});
+				function scrollToTop() {
+					verticalOffset = typeof (verticalOffset) != 'undefined' ? verticalOffset : 0;
+					element = $('body');
+					offset = element.offset();
+					offsetTop = offset.top;
+					$('html, body').animate({ scrollTop: offsetTop }, 500, 'linear');
+				}
+
+				$( "#dialog" ).dialog({
+					resize:false,
+		      autoOpen: false,
+					modal: true,
+					width:600,
+					height:400,
+					title:'Ethereum',
+					show: {
+		        effect: "blind",
+		        duration: 10
+		      },
+					close: function( event, ui ) {
+						$('.scroll-top-wrapper').removeAttr('style');
+						$('body').removeAttr('style');
+					}
+		    });
+
+       $( "#ethereumLink" ).on( "click", function() {
+				   $('.scroll-top-wrapper').attr('style','visibility: hidden !important;');
+					 $('body').attr('style','overflow:hidden;');
+           $( "#dialog" ).dialog( "open" );
+        });
+
+			$( "#reactLink" ).on( "click", function() {
+				 $('.scroll-top-wrapper').attr('style','visibility: hidden !important;');
+				 $('body').attr('style','overflow:hidden;');
+         $( "#dialogreact" ).dialog( "open" );
+       });
+
+			$( "#dialogreact" ).dialog({
+					resize:false,
+		      autoOpen: false,
+					modal: true,
+					width:600,
+					height:400,
+					title:'React',
+					show: {
+		        effect: "blind",
+		        duration: 10
+		      },
+					close: function( event, ui ) {
+						$('.scroll-top-wrapper').removeAttr('style');
+						$('body').removeAttr('style');
+					}
+		    });
+			});
+		</script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a target="_blank" class="navbar-brand" href="https://accelerator.cognizant.com">
+						<img src="/images/logo-accelerator-1x.wht.png" alt="Cognizant Accelerator">
+					</a>
+				</div>
+				<div class="text-center idea-header">
+					<h1>Blockchain - Trade and Supply Chain Finance</h1>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2 sidebar">
+					<ul id="tabs" class="nav nav-sidebar">
+						<li><a href="#" data-section="#tab1"><i class="glyphicon glyphicon-book"></i><b>Overview</b></a></li>
+						<li><a href="#" data-section="#tab2"><i class="glyphicon glyphicon-dashboard"></i><b>Industry Players</b></a></li>
+						<li><a href="#" data-section="#tab3"><i class="glyphicon glyphicon-list-alt"></i><b>Competitive Analysis</b></a></li>
+						<li><a href="#" data-section="#tab4"><i class="glyphicon glyphicon-play-circle"></i><b>Industry Articles</b></a></li>
+						<li><a href="#" data-section="#tab5"><i class="glyphicon glyphicon-edit"></i><b>Technical Articles</b></a></li>
+						<li><a href="#" data-section="#tab6"><i class="glyphicon glyphicon-warning-sign"></i><b>Glossary</b></a></li>
+						<li><a href="#" data-section="#tab7"><i class="glyphicon glyphicon-wrench"></i><b>Implementation</b></a></li>
+						<li><a href="#" data-section="#tab8"><i class="glyphicon glyphicon-certificate"></i><b>Code Spikes</b></a></li>
+					</ul>
+				</div>
+
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<div id="tab1">
+						<h2 class="page-header">Overview</h2>
+            <p>Supply chain finance is a set of technology-based business and financing processes that link the various parties in a transaction
+              – the buyer, seller and financing institution – to lower financing costs and improved business efficiency.
+            </p>
+            <p>Supply chain finance (SCF) provides short-term credit that optimizes working capital for both the buyer and the seller. Supply
+              chain finance generally involves the use of a technology platform in order to automate transactions and track the invoice
+              approval and settlement process from initiation to completion.
+            </p>
+            <p>Blockchain based Trade &amp; Supply Chain Finance is a solution for
+            </p>
+            <ul class="fa-ul">
+              <li><i class="fa-li fa fa-check-square"></i>Payment method automation</li>
+              <li><i class="fa-li fa fa-check-square"></i>Trade asset tokenization</li>
+              <li><i class="fa-li fa fa-check-square"></i>Payment instrument digitization</li>
+            </ul>
+            <p>Streamlining the $6 trillion global trade finance industry out of plagued information asymmetries, process inefficiencies
+              , increasing costs, errors, fraud and delays for banks and corporates.
+            </p>
+					</div>
+
+					<div id="tab2">
+						<h2 class="page-header">Industry Players</h2>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+							<h3><a target="_blank" href="https://primerevenue.com"><b>PrimeRevenue</b></a></h3>
+							<p>PrimeRevenue recognizes that supply chain finance is much more than just math and that there is no one-size fits all approach.
+								Its cloud-based platform delivers programs designed specifically for a business, throughout a supply chain whether it’s
+								a buyer or supplier.
+							</p>
+							<p>From traditional supply chain finance programs that will unlock millions in working capital, to dynamic
+								discounting programs, to solutions for mid-tier suppliers, PrimeRevenue is all about supply chain finance.
+							</p>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+							<h3><a target="_blank" href="http://www.demica.com"><b>Demica</b></a></h3>
+							<p>Demica’s innovative supply chain finance solutions enable its clients to extend days payable outstanding, capture early payment
+								discounts offered by suppliers or help their suppliers secure funding at a lower cost, all while improving their own margins.
+							</p>
+							<p>The company specializes in non-investment grade programs and those that operate cross-border. With the company’s uniquely
+								flexible technology platform and innovative structures, it is able to provide a tailored solution to each client that will
+								maximize the return from the program.
+							</p>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+							<h3><a target="_blank" href="https://taulia.com"><b>Taulia</b></a></h3>
+							<p>Taulia drives innovation in the Financial Supply Chain. By turning every invoice into a revenue opportunity, Taulia enables
+								organizations to strengthen supplier relationships while adding millions to the bottom line.
+							</p>
+							<p>Some of the smartest brands in the world rely on Taulia, including Coca-Cola Bottling, Pfizer, Hallmark, John Deere, and
+								many other Fortune 500 companies from various industries.
+							</p>
+						</div>
+						<p></p>
+						<div class="col-md-12">
+							<h3>Other Players</h3>
+							<div>
+								<h4><a target="_blank" href="http://www.maybank.com/en/global-banking/transaction-banking/products/trade-supply-chain-financing/structured-trade-finance.page">Maybank</a></h4>
+								<h4><a target="_blank" href="https://www.xelix.com/blog/Supply-Chain-Finance/?gclid=CNSyy-G4nNMCFZIEaAod-LUEcw">Xelix</a></h4>
+								<h4><a target="_blank" href="https://www.gfmag.com/magazine/february-2015/worlds-best-trade-and-supply-chain-finance-providers-2015?page=6">Global Finance</a></h4>
+								<h4><a target="_blank" href="https://www.sc.com/cn/en/business/transaction-banking-services-trade-and-supply-chain-financing-solutions.html">Standard Charted</a></h4>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab3">
+						<h2 class="page-header">Competitive Analysis</h2>
+
+            <table class="catable table-striped table-hover">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th scope="col" abbr="Starter"><a target="_blank" href="https://primerevenue.com">PrimeRevenue</a></th>
+                  <th scope="col" abbr="Medium"><a target="_blank" href="http://www.demica.com/">Demica</a></th>
+                  <th scope="col" abbr="Business"><a target="_blank" href="https://taulia.com">Taulia</a></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="info">
+                  <th scope="row">Business</th>
+                  <td>Provides alternative sources of funding to other companies and other enterprises. It is run on a business-to-business
+                    platform, providing working capital to mid-market and sub-investment grade companies, as well as other firms.
+                  </td>
+                  <td>Specialist provider of working capital solutions and financing partner to multinational companies.
+                  </td>
+                  <td>Provides cloud-based invoice, payment and dynamic discounting management solutions for financial supply chain.
+                  </td>
+                </tr>
+                <tr class="info">
+                  <th scope="row">Unique Feature/s</th>
+                  <td>Leverages a unique onboarding platform, which can be customized for every client and available in multiple languages.
+                    Unique multi-funding capabilities -With over 50 funders, it provides the widest choice of financing.
+                  </td>
+                  <td>Best in risk mitigated systems. Also provide opportunity for funders to deploy capital efficiently and in scale. This
+                    company uniquely offers both receivables and payables programmes through its proven end-to-end technology.
+                  </td>
+                  <td> Fastest growing SaaS platform for Supplier Financing, transforms every invoice into a revenue opportunity through automating
+                    and maximizing supplier discounts.
+                  </td>
+                </tr>
+                <tr class="info">
+                  <th scope="row">Products and Solutions</th>
+                  <td>SciEnable, SciSupplier, SciMap, OpenSci</td>
+                  <td>Invoice Discounting Citadel Solution, Trade Receivables Securitization Citadel Solution</td>
+                  <td>Taulia Business Exchange, One Time Early payment, Cashflow, Cash Planner, Taulia Collaborate, Order Connect, Supplier
+                    Launch
+                  </td>
+                </tr>
+                <tr class="info">
+                  <th scope="row">Achievements</th>
+                  <td>For six consecutive years, this company was recognized as Best Global Supply Chain Finance Provider by Global Finance
+                    magazine. Apart from basic SCF offerings, this company has successfully processed receivables financial transactions
+                    in many jurisdictions, including the US, Canada, UK, Germany, France, Sweden, South Africa, Australia and China,
+                    with perfection of interest in the receivable.
+                  </td>
+                  <td>Uniquely offers both receivables and payables programmes through its proven end-to-end technology platform all over
+                    the world with a 15-year track record. Two Demica SCF Platform partners win at Global Finance’s World’s Best Supply
+                    Chain Finance Providers 2017. British working capital solutions provider Demica and Finnish e-invoicing technology
+                    group Basware have unveiled a revenue-sharing partnership to make supply chain finance available to Basware's clients.
+                  </td>
+                  <td>The most innovative brands in the world rely on Taulia, including Coca-Cola Bottling Co. Consolidated, Pfizer, Hallmark,
+                    and many other Global 2000 companies. It has expanded supply chain ecosystem bringing together hundreds of financial
+                    supply chain experts and thought leaders, it has got product innovations and strategic partnerships. Also this is
+                    one of the companies which is stepped into Aerospace sector.
+                  </td>
+                </tr>
+                <tr class="info">
+                  <th scope="row">About Blockchain</th>
+                  <td>This company competes in a more competitive market than when it started. There is no single standard for e-invoicing,
+                    so it is based on the clout of the buyer. Blockchain seems to be a imminent change.
+                  </td>
+                  <td>This company's technology is amongst the most sophisticated and flexible in the SCF industry.They are emphasizing more
+                    on their technological platform.
+                  </td>
+                  <td>This company believes that Blockchain will probably be first established in very controlled and stable environments
+                    using regional and/or vertical frameworks to facilitate a greater choice of financing options for buyers and suppliers
+                    participating in early trials. Solutions using blockchain will be more scalable and offer enhanced transparency and
+                    auditability.
+                  </td>
+                </tr>
+                <tr class="info">
+                  <th scope="row">Reliability</th>
+                  <td>As the leader in cloud-enabled SCF solutions, it manages and optimizes cash flow for more than 20,000 customers in
+                    over 70 countries. Being a reliable company it solidified its reputation through an array of complementary offerings
+                    that add transparency, optimize supplier acceptance and streamline the end-to-end implementation process.
+                  </td>
+                  <td>As this company has largest scalability, global expertise and receivable value this company is trusted by the world’s
+                    multinationals and banks to power their working capital programmes.
+                  </td>
+                  <td>Regardless of whether the early payment is funded by the buying organization, bank or third-party financier, this company
+                    ensures that all invoices are always available for early payment and discount revenue is always adding to their bottom
+                    line.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+					</div>
+          <div id="tab4">
+            <h2 class="page-header">Industry Articles</h2>
+            <div class="row">
+              <div class="col-sm-3">
+                <h5>&nbsp;</h5>
+                <a target="_blank" href="https://www.gfmag.com/magazine/february-2017/minding-trade-finance-gap">
+                  <img src="/images/supply-chain-img1.jpg" alt="" class="post-thumbnail" style="width:240px;height:120px;">
+                </a>
+              </div>
+              <div class="col-sm-9">
+                <h3>
+                  World's Best Trade Finance Providers 2017
+                </h3>
+                Regulatory compliance costs contribute to a growing global shortage of trade finance, particularly in emerging markets. Global
+                Finance announces our picks for the world's Best Trade Finance Providers for 2017, including both bank and non-bank
+                financial institutions. Bankers are worried about the ability of the financial system to deliver the financing needed
+                to help restore international trade as a driver of economic growth.To read more, Please visit:
+                <a target="_blank" href="https://www.gfmag.com/magazine/february-2017/minding-trade-finance-gap" data-section="#World's Best Trade Finance Providers">#World's Best Trade Finance Providers</a>
+              </div>
+            </div>
+            <h5>&nbsp;</h5>
+            <div class="row">
+              <div class="col-sm-3">
+                <h5>&nbsp;</h5>
+                <a target="_blank" href="https://www.gfmag.com/magazine/julyaugust-2015/trade-finance-thinking-outside-box" data-section="#Thinking outside the box">
+                  <img src="/images/supply-chain-img9.jpg" alt="" class="post-thumbnail" style="width:240px;height:120px;">
+                </a>
+              </div>
+              <div class="col-sm-9">
+                <h3>
+                  Trade Finance–Thinking Outside The Box
+                </h3>
+                Alternative finance—in all its myriad forms—could prove the answer to the global trade finance gap. Trade finance plays an
+                important role in supporting global trade: As well as providing funding, it also enables importers and exporters to
+                mitigate risk in their transactions. However, in some parts of the world, demand significantly outstrips availability
+                for such funding. As a result, more companies are turning to alternative financiers to meet their trade finance needs.
+                To read more, Please visit: <a target="_blank" href="https://www.gfmag.com/magazine/julyaugust-2015/trade-finance-thinking-outside-box"
+                  data-section="#Thinking outside the box">#Thinking outside the box</a>
+              </div>
+            </div>
+            <h5>&nbsp;</h5>
+            <div class="row">
+              <div class="col-sm-3">
+                <h5>&nbsp;</h5>
+                <a target="_blank" href="https://www.gfmag.com/magazine/may-2015/supply-chain-risk-management-staying-nimble" data-section="#Supply chain risk Management">
+                  <img src="/images/supply-chain-img3.jpg" alt="" class="post-thumbnail" style="width:240px;height:120px;">
+                </a>
+              </div>
+              <div class="col-sm-9">
+                <h3>
+                  Supply Chain | Staying Nimble
+                </h3>
+                The treasury team is now critical to making supply chains more flexible while mitigating risks. Global supply chains can
+                be affected by many different pressures and events.
+                <br/>Political strife, civil wars, macroeconomic developments, liquidity events and even the weather can all affect
+                suppliers’ ability to deliver goods to their corporate customers. To read more, Please visit:
+                <a target="_blank" href="https://www.gfmag.com/magazine/may-2015/supply-chain-risk-management-staying-nimble" data-section="#Supply chain risk Management">#Supply chain risk Management</a>
+              </div>
+            </div>
+            <h5>&nbsp;</h5>
+            <div class="row">
+              <div class="col-sm-3">
+                <h5>&nbsp;</h5>
+                <a target="_blank" href="https://www.gfmag.com/magazine/february-2017/field-major-players">
+                  <img src="/images/supply-chain-img2.jpg" alt="" class="post-thumbnail" style="width:240px;height:120px;">
+                </a>
+              </div>
+              <div class="col-sm-9">
+                <h3>
+                  World's Best Supply Chain Finance Providers 2017
+                </h3>
+                Global Finance magazine names the world's best supply chain finance providers for 2017, considering both banks and non-bank
+                financial institutions. <br/>Supply chain finance is dominated by large global banks, yet developing regions
+                are nurturing some challengers, and growing complexity is bringing nonbank investors into the picture.To read more,
+                Please visit:
+                <a target="_blank" href="https://www.gfmag.com/magazine/february-2017/field-major-players" data-section="#World's Best Supply Chain Finance Providers">#World's Best Supply Chain Finance Providers</a>
+              </div>
+            </div>
+            <h5>&nbsp;</h5>
+            <div class="row">
+              <div class="col-sm-3">
+                <h5>&nbsp;</h5>
+                <a target="_blank" href="https://www.gfmag.com/magazine/julyaugust-2016/tech-and-future-trade-finance" data-section="#major field players">
+                  <img src="/images/supply-chain-img5.jpg" alt="" class="post-thumbnail" style="width:240px;height:120px;">
+                </a>
+              </div>
+              <div class="col-sm-9">
+                <h3>
+                  Tech And The Future Of Trade Finance
+                </h3>
+                Blockchain, the Cloud and the Internet of Things are luring trade finance away from its reliance on paper. Trade finance
+                is one area of commercial banking that historically has proven resistant to technological innovations. “It’s both ancient
+                and arcane,” says Andy Schmidt, executive adviser with consulting firm CEB. As a niche within commercial banking, trade
+                finance hasn’t seen the same pressure to modernize as have higher-volume areas like payments, he adds. To read more,
+                Please visit:
+                <a target="_blank" href="https://www.gfmag.com/magazine/julyaugust-2016/tech-and-future-trade-finance" data-section="#Tech and Future of Trade Finance">#Tech and Future of Trade Finance</a>
+              </div>
+            </div>
+            <h5>&nbsp;</h5>
+            <div class="row">
+              <div class="col-sm-3">
+                <h5>&nbsp;</h5>
+                <a target="_blank" href="https://www.gfmag.com/magazine/june-2016/innovators-2016-trade-finance" data-section="#Top Investors 2016">
+                  <img src="/images/supply-chain-img6.jpg" alt="" class="post-thumbnail" style="width:240px;height:120px;">
+                </a>
+              </div>
+              <div class="col-sm-9">
+                <h3>
+                  Top Innovators In Trade Finance | 2016
+                </h3>
+                Trade finance is behind some other banking sectors in transitioning to paperless documents and digital distribution, but
+                it’s catching up. This may be the age of fintech (financial technology), but the world of trade often bears better
+                comparison with the Dark Ages than the digital age. Phones, faxes and paper—not computer nodes and e-documents—are
+                still the order of the day. But if our Innovators in Trade Finance are anything to go by, that is all about to change.
+                To read more, Please visit:
+                <a target="_blank" href="https://www.gfmag.com/magazine/june-2016/innovators-2016-trade-finance" data-section="#Top Investors 2016">#Top Investors 2016</a>
+              </div>
+            </div>
+            <h5>&nbsp;</h5>
+            <div class="row">
+              <div class="col-sm-3">
+                <h5>&nbsp;</h5>
+                <a target="_blank" href="https://www.gfmag.com/magazine/julyaugust-2016/banks-go-back-basics" data-section="#Banks go back basics">
+                  <img src="/images/supply-chain-img8.jpg" alt="" class="post-thumbnail" style="width:240px;height:120px;">
+                </a>
+              </div>
+              <div class="col-sm-9">
+                <h3>
+                  In Developing Technology, Banks Go Back To Basics
+                </h3>
+                Amid the surge in global trade, financial institutions are revisiting the way they conduct transaction banking. Technological
+                innovations like distributed ledgers may be rocketing financial institutions into the future. But Lisa Robins, a managing
+                director and the regional head of global transaction banking, Asia-Pacific, at Deutsche Bank, says the renewed attention
+                the industry is paying to transaction banking “is taking us back to our origins—focusing specifically on the needs
+                of customers and organizing to meet those needs.” To read more, Please visit:
+                <a target="_blank" href="https://www.gfmag.com/magazine/julyaugust-2016/banks-go-back-basics" data-section="#Banks go back basics">#Banks go back basics</a>
+              </div>
+            </div>
+            <h5>&nbsp;</h5>
+            <div>
+              <h2 class="page-header">Video References</h2>
+            </div>
+            <h4>&nbsp;</h4>
+            <div class="row">
+              <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6">
+                <iframe width="400" height="300" src="https://www.youtube.com/embed/plghxPnCl8k">
+                </iframe>
+                <p>
+                  Video courtesy of
+                  <a target="_blank" href="https://www.youtube.com/watch?v=plghxPnCl8k">Demystifying Supply Chain</a>.
+                </p>
+              </div>
+              <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6">
+                <iframe width="400" height="300" src="https://www.youtube.com/embed/INphwcI4X7o">
+                </iframe>
+                <p>
+                  Video courtesy of
+                  <a target="_blank" href="https://www.youtube.com/watch?v=INphwcI4X7o">What is Supply Chain</a>.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6">
+                <h4>&nbsp;</h4>
+                <iframe width="400" height="300" src="https://www.youtube.com/embed/dmhDu7u6B6s">
+                </iframe>
+                <p>
+                  Video courtesy of
+                  <a target="_blank" href="https://www.youtube.com/watch?v=dmhDu7u6B6s">Block Chain | How it Works</a>.
+                </p>
+              </div>
+              <div class="col-lg-6 col-md-4 col-sm-4 col-xs-6">
+                <h4>&nbsp;</h4>
+                <iframe width="400" height="300" src="https://www.youtube.com/embed/r0LsnzAe1Yg">
+                </iframe>
+                <p>
+                  Video courtesy of
+                  <a target="_blank" href="https://www.youtube.com/watch?v=r0LsnzAe1Yg">Trade Solution | Block Chain</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+				<div id="tab5">
+					<h2 class="page-header">Technical articles</h2>
+					<p>
+						<b>Blockchain Technology</b>
+						<br/>
+						<br/> A blockchain is a type of distributed ledger, comprised of unchangeable, digitally recorded data in packages called blocks. These digitally recorded "blocks" of data is stored in a linear chain. Each block in the chain contains data (e.g. bitcoin
+						transaction), is cryptographically hashed. The blocks of hashed data draw upon the previous-block (which came before it) in the chain, ensuring all data in the overall "blockchain" has not been tampered with and remains unchanged
+					</p>
+					<p>
+						<b>Technical Scopes</b><br><br>
+						 <ul>
+							<li><a target="_blank" href="https://www.slideshare.net/Sulemang/distributed-database-system">Distributed databases / Storage </a> is a database in which portions of the database are stored in multiple physical locations and processing is distributed among multiple database nodes.</li><br/>
+							<li><a target="_blank" href="https://www.techopedia.com/definition/1825/distributed-file-system-dfs">Distributed file systems</a> (DFS) is a file system with data stored on a server. The data is accessed and processed as if it was stored on the local client machine.</li><br/>
+							<li><a target="_blank" href="https://www.maxcdn.com/one/visual-glossary/interplanetary-file-system/">Inter planetary file systems</a>​ (IPFS) is a new hypermedia distribution protocol, addressed by content and identities, as opposed to traditional location addressing. IPFS is designed to decentralize the web while simultaneously increasing the speed and security of the Internet.</li><br/>
+							<li><a target="_blank" href="https://www.techopedia.com/definition/25777/peer-to-peer-network-p2p-network">Peer-to-peer network communication </a> is a decentralized communications model in which each party has the same capabilities and either party can initiate a communication session. Unlike the client/server model, in which the client makes a service request and the server fulfills the request, the P2P network model allows each node to function as both a client and server.</li><br/>
+							<li><a target="_blank" href="http://searchsoftwarequality.techtarget.com/definition/cryptography" >Cryptography </a> secures the global information infrastructure by encrypting data flows and protecting data from third-party interception.</li></br>
+							<li><a target="_blank" href="https://martinfowler.com/bliki/CQRS.html">CQRS</a> is an implementation of Command Query Separation principle to the architecture of software. This can maximize performance, scalability, and security. Supports the evolution of the system over time through higher flexibility, and prevent update commands from causing merge conflicts at the domain level.</li><br/>
+							<li><a target="_blank" href="https://www.thoughtworks.com/insights/blog/domain-driven-design-services-architecture">DDD</a> Domain-driven design (DDD) is an approach to developing software for complex needs by deeply connecting the implementation to an evolving model of the core business concepts.</li><br/>
+							<li><a target="_blank" href="https://en.wikipedia.org/wiki/Paxos_(computer_science)">PAXOS </a> is a family of protocols for solving consensus in a network of unreliable processors. Consensus is the process of agreeing on one result among a group of participants. This problem becomes difficult when the participants or their communication medium may experience failures.</li></br>
+					  </ul><br>
+					</p>
+					<div class="jumbotron">
+						<div class="container text-center">
+							<h3 class="page-header">Proposed Technologies For LaunchPad Project</h3>
+							<p class="lead"></p>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 well pricing-table">
+								<div class="pricing-table-holder">
+									<center>
+										<img src="/images/development_icon_100x100.jpg" class="img-responsive img-circle" alt="">
+										<h3>DEVELOPMENT</h3>
+										<p class="caption">
+											Technologies used for development.
+										</p>
+									</center>
+								</div>
+								<div class="pricing-feature-list">
+									<ul class="list-group">
+										<li class="list-group-item"><a id="reactLink" class="pointer">React</a></li>
+										<li class="list-group-item"><a target="_blank" href="https://dzone.com/refcardz/nodejs">Node JS</a></li>
+										<li class="list-group-item"><a id="ethereumLink" class="pointer">Ethereum</a></li>
+										<li class="list-group-item"><a target="_blank" href="https://expressjs.com/">Express JS</a></li>
+									</ul>
+								</div>
+								<div class="price-table-button-holder">
+								</div>
+							</div>
+							<div class="col-md-4 well pricing-table">
+								<div class="pricing-table-holder">
+									<center>
+										<img src="/images/devops_icon2_100x100.jpg" class="img-responsive img-circle" alt="">
+										<h3>DEVOPS</h3>
+										<p class="caption">
+											Technologies used for devops.
+										</p>
+									</center>
+								</div>
+								<div class="pricing-feature-list">
+									<ul class="list-group">
+										<li class="list-group-item"><a target="_blank" href="https://docs.docker.com/engine/getstarted/">Docker</a></li>
+										<li class="list-group-item"><a target="_blank" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction">Heroku</a></li>
+										<li class="list-group-item"><a target="_blank" href="https://circleci.com/docs/1.0/getting-started/">Circle CI</a></li>
+										<li class="list-group-item"><a target="_blank" href="https://git-scm.com/">GIT</a></li>
+									</ul>
+								</div>
+								<div class="price-table-button-holder">
+								</div>
+							</div>
+							<div class="col-md-4 well pricing-table">
+								<div class="pricing-table-holder">
+									<center>
+										<img src="/images/testing_icon_100x100.jpg" class="img-responsive img-circle" alt="">
+										<h3>TESTING</h3>
+										<p class="caption">
+											Technologies used for testing.
+										</p>
+									</center>
+								</div>
+								<div class="pricing-feature-list">
+									<ul class="list-group">
+										<li class="list-group-item"><a target="_blank" href="https://karma-runner.github.io/1.0/index.html">Karma</a></li>
+										<li class="list-group-item"><a target="_blank" href="https://jasmine.github.io/">Jasmine</a></li>
+										<li class="list-group-item"><a target="_blank" href="https://code.tutsplus.com/tutorials/an-introduction-to-webdriver-using-the-javascript-bindings--cms-21855">Selenium</a></li>
+										<li class="list-group-item"><a target="_blank" href="https://semaphoreci.com/community/tutorials/getting-started-with-node-js-and-mocha">Mocha</a></li>
+									</ul>
+								</div>
+								<div class="price-table-button-holder">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+					<div id="tab6">
+						<h2 class="page-header">Glossary</h2>
+						<nav class="navbar navbar-inverse" id="navigate">
+              <div class="container">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li><a href="#indexa">A</a></li>
+                    <li><a href="#indexb">B</a></li>
+                    <li><a href="#indexc">C</a></li>
+                    <li><a href="#indexd">D</a></li>
+                    <li><a href="#indexe">E</a></li>
+                    <li><a href="#indexf">F</a></li>
+                    <li><a href="#indexg">G</a></li>
+                    <li><a href="#indexh">H</a></li>
+                    <li><a href="#indexi">I</a></li>
+                    <li><a href="#indexj">J</a></li>
+                    <li><a href="#indexk">K</a></li>
+                    <li><a href="#indexl">L</a></li>
+                    <li><a href="#indexm">M</a></li>
+                    <li><a href="#indexn">N</a></li>
+                    <li><a href="#indexo">O</a></li>
+                    <li><a href="#indexp">P</a></li>
+                    <li><a href="#indexq">Q</a></li>
+                    <li><a href="#indexr">R</a></li>
+                    <li><a href="#indexs">S</a></li>
+                    <li><a href="#indext">T</a></li>
+                    <li><a href="#indexu">U</a></li>
+                    <li><a href="#indexv">V</a></li>
+                    <li><a href="#indexw">W</a></li>
+                    <li><a href="#indexx">X</a></li>
+                    <li><a href="#indexy">Y</a></li>
+                    <li><a href="#indexz">Z</a>
+                  </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+              </div>
+              <!-- /.container -->
+            </nav>
+
+            <!-- Page Content -->
+            <div class="container">
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexa">
+			    <h2><b>A</b></h2><div class="space"></div>
+                <h4><b>Acceptance</b></h4>
+                <p>The beneficiary presents its documents together with a bill of exchange payable at a future date stipulated in the credit. The bank accepts the bill of exchange by signing it, and returns it to the beneficiary. 
+                  Acceptance of a draft obliges the acceptor to pay it at maturity.</p>
+
+                <h4><b>ACP Countries</b></h4>
+                <p>The 69 African, Caribbean and Pacific countries which signed the Lomé Convention.</p>
+
+                <h4><b>Address</b></h4>
+                <p>Addresses (Cryptocurrency addresses) are used to receive and send transactions on the network. An address is a string
+                  of alphanumeric characters, but can also be represented as a scannable QR code. </p>
+
+                <h4><b>Advance Compensation</b></h4>
+                <p>A forward purchase.</p>
+
+                <h4><b>Advance Fee Fraud</b></h4>
+                <p>Advance fee fraud covers a variety of situations in which a fraudster persuades a victim to pay him an advance commission in connection with the arrangement of financial facilities. Before the victim realises that the deal is a sham and that no facilities are available, the fraudster runs off with the commission.</p>
+
+                <h4><b>Advance Payment Guarantee/Bond</b></h4>
+                <p>A guarantee or bond provided by a bank to the buyer. The guarantee/bond undertakes to return to the buyer on behalf of the supplier, usually on demand, downpayments or progress payments made if the supplier fails to complete the contract.</p>
+                
+                <h4><b>Advising Bank</b></h4>
+                <p>A bank in the beneficiary’s country – usually a correspondent of the issuing bank – through which the issuing bank communicates the credit to the beneficiary. It may also be asked to confirm and/or pay the credit.</p>
+
+                <h4><b>Agency Broker</b></h4>
+                <p>A broker that acts as an agent to its clients. When acting as the agent, the agency broker must look after its clients' best interests, which involves attempting to fill client orders at the lowest price and in the fastest way possible. Common clients of an agency broker include large institutional funds that place large block orders.</p>
+
+                <h4><b>Agency Fee</b></h4>
+                <p>An annual fee payable by the buyer, usually to cover the costs incurred by the lender in administering the financing.</p>
+
+                <h4><b>AGIO</b></h4>
+                <p>The price increase over and above the market price of the traded goods and attributable to the extra costs involved in countertrading.</p>
+
+                <h4><b>Agreement Ledger</b></h4>
+                <p>An agreement ledger is distributed ledger used by two or more parties to negotiate and reach agreement. </p>
+
+                <h4><b>Amendment</b></h4>
+                <p>Any change made to the terms of a credit. The applicant initiates the amendment which then follows the same process as a letter of credit.</p>
+
+                <h4><b>API</b></h4>
+                <p>API stands for application programming interface. It is a set of requirements that dictate how two pieces of software talk to each other. It is basically what allows you to move data between applications. </p>
+
+                <h4><b>Applicant</b></h4>
+                <p>The buyer who applies for a letter of credit.</p>
+
+                <h4><b>Applicant</b></h4>
+                <p>The buyer who applies for a letter of credit.</p>
+
+                <h4><b>Attestation Ledger</b></h4>
+                <p>A distributed ledger providing a durable record of agreements, commitments or statements, providing evidence (attestation)
+                  that these agreements, commitments or statements were made. </p>
+
+                <h4><b>ASIC</b></h4>
+                <p>ASIC is an acronym for "Application Specific Integrated Circuit". ASICs are silicon chips specifically designed to
+                  do a single task. In the case of bitcoin, they are designed to process SHA-256 hashing problems to mine new bitcoins.
+                  </p>
+
+                <h4><b>Assignment of Policy</b></h4>
+                <p>The assignment of a policy’s rights and benefits from the exporter to a lender.</p>
+
+                <h4><b>Availability</b></h4>
+                <p>The date by which a set of documents has to, or will, be delivered to the forfaiter ready for discounting.</p>
+
+                <h4><b>Avalising Bank</b></h4>
+                <p>A bank in an importer’s country which adds its aval to notes or bills in a forfaiting transaction.</p>
+
+                <h4><b>Avalor</b></h4>
+                <p>An institution or person acting as a guarantor.</p>
+
+                <h4><b>Average Life</b></h4>
+                <p>An evaluation of the average time an asset will be outstanding given a specific repayment system.</p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexb">
+			    <h2><b>B</b></h2><div class="space"></div>
+                <h4><b>BaaS</b></h4>
+                <p>A relatively new term for 2016, coined by William Mougayar of Virtual Capital Ventures in early 2015. It means Blockchain-as-a-Service. Equivalent terms include Ethereum Blockchain-as-a-Service (EthBaaS), or “Blockchain-as-a-Platform” (BaaP). It refers to the growing landscape of services based around blockchain technology. The best example of this we have so far is Microsoft launching its own EthBaaS on the Microsoft Azure cloud platform this year. This platform will allow companies to begin working with blockchain technology without having to first make significant investments in hardware.</p>
+
+                <h4><b>Beneficiary</b></h4>
+                <p>The person (for example, the exporter) in whose favour the credit is issued.</p>
+
+                <h4><b>Bid Bond</b></h4>
+                <p>A bond provided by a bank to the buyer promising compensation, usually on demand, in the event that a supplier declines to enter into a contract in conformity with the bid he has put forward.</p>
+
+                <h4><b>Bill Of Exchange</b></h4>
+                <p>An unconditional order in writing addressed by one person to another, signed by the person creating it (drawer), and requiring the addressee (drawee) to pay a certain sum of money to the drawer at a fixed or determinable future time .</p>
+
+                <h4><b>Bill Of Lading</b></h4>
+                <p>Issued by a shipping company to the shipper as a receipt for the goods, a memorandum of the contract of carriage and a document of title.</p>
+
+                <h4><b>Bitcoin (uppercase)</b></h4>
+                <p>The well known cryptocurrency, based on the proof-of-work blockchain.<br />
+                </p>
+
+                <h4><b>bitcoin (lowercase)</b></h4>
+                <p>The specific collection of technologies used by Bitcoin’s ledger, a particular solution. Note that the currency is
+                  itself one of these technologies, as it provides the miners with the incentive to mine. <br />
+                </p>
+
+                <h4><b>Bitcoin Mining</b></h4>
+                <p>Bitcoin mining is the process by which transactions are verified and added to the public ledger, known as the block chain, and also the means through which new bitcoin are released.  Anyone with access to the internet and suitable hardware can participate in mining.  The mining process involves compiling recent transactions into blocks and trying to solve a computationally difficult puzzle.  The participant who first solves the puzzle gets to place the next block on the block chain and claim the rewards.  The rewards, which incentivize mining, are both the transaction fees associated with the transactions compiled in the block as well as newly released bitcoin.<br />
+                </p>
+
+                <h4><b>Block</b></h4>
+                <p>A block refers to a large order of the same security to be bought or sold by institutional or other large investors. There is no official size designation constituting a block of securities, but a commonly used threshold is more than 10,000 equity shares, or a total market value of more than $200,000.<br />
+                </p>
+
+                <h4><b>Blocked Fund Letters (BFL)</b></h4>
+                <p>In cases where a fraudster has enticed an investor into a bogus scheme where the invested funds remain on deposit earning interest in the investor’s bank, the investor is told to obtain a blocked fund letter (BFL) from his bank. This letter promises to pay funds from the victim’s account to the holder of the letter. The fraudster, often with the help of a third party such as a lawyer, obtains control of the BFL which he uses as collateral to get a loan at a bank of his choice. The fraudster can then default on the loan and flee. Under the BFL the issuing bank must pay the lending bank and the victim loses his money. However, the banking community does not recognISe BFLs as banking instruments and they should not be issued by banks or accepted as collateral.<br />
+                </p>
+
+                <h4><b>Blockchain</b></h4>
+                <p>A blockchain is a type of distributed ledger, comprised of unchangable, digitally recorded data in
+                  packages called blocks (rather like collating them on to a single sheet of paper). Each block is then ‘chained’ to
+                  the next block, using a cryptographic signature. This allows block chains to be used like a ledger, which can be
+                  shared and accessed by anyone with the appropriate permissions.<br />
+                </p>
+
+                <h4><b>Block Height</b></h4>
+                <p>Block height refers to the number of blocks connected together in the block chain. For example, <i>Height 0</i>, would
+                  be the very first block, which is also called the <i>Genesis Block</i>.<br />
+                </p>
+
+                <h4><b>Block House</b></h4>
+                <p>A brokerage firm with the primary focus of locating potential buyers and sellers of large trades. A block house typically deals with institutional clients rather than individual investors, since each transaction represents millions of dollars. Examples of institutional clients include mutual funds and pension funds that assume significant security positions. Because of the nature of block house firms, their trading activity can have a considerable effect on the financial markets. Block trades are generally considered to be those dealing with more than 10,000 shares of stock (excluding penny stocks), or any other trade that involves a high monetary value.<br/>
+                </p>
+
+                <h4><b>Block Positioner</b></h4>
+                <p>A securities dealer who will take a long or short position in order to accommodate a seller or buyer of a large block of securities. The dealer takes on the risk of the securities in order to help clear the trade for the seller. Block positioners aim to unload the position quickly, and typically hedge their risk with options or by selling the securities short.<br/>
+                </p>
+
+                <h4><b>Block Reward</b></h4>
+                <p>The reward given to a miner which has successfully hashed a transaction block. Block rewards can be a mixture of coins
+                  and transaction fees, depending on the policy used by the cryptocurrency in question, and whether all of the coins
+                  have already been successfully mined. The current block reward for the Bitcoin network is 25 bitcoins for each block.<br/>
+                </p>
+
+                <h4><b>Block Trade</b></h4>
+                <p>A block trade, also known as a block order, is an order or trade submitted for the sale or purchase of a large quantity of securities. A block trade involves a significantly large number of equities or bonds being traded at an arranged price between two parties, sometimes outside of the open markets, to lessen the impact on the security price. In general, 10,000 shares of stock, not including penny stocks, or $200,000 worth of bonds are considered a block trade.<br/>
+                </p>
+
+                <h4><b>Block Trading Facility - BTF</b></h4>
+                <p>A wholesale trading facility that allows traders to buy or sell large numbers of securities bilaterally outside of the public market. Because trades conducted in a block trading facility are typically between two parties, prices are set with certainty and execution is done without delay. Institutional investors use block trading facilities for transactions involving large numbers of shares.<br/>
+                </p>
+
+                <h4><b>Buyer Credit</b></h4>
+                <p>A financing arrangement under which a lending bank in the supplier’s country lends directly to the buyer or to a bank in the buyer’s country to enable the buyer to make payments due to the supplier under a contract.<br/>
+                </p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexc">
+			    <h2><b>C</b></h2><div class="space"></div>
+                <h4><b>Category I Countries</b></h4>
+                <p>Category I refers to relatively developed countries and is the Consensus classification based on GNP per capita income. <br />
+                </p>
+
+                <h4><b>Category II Countries</b></h4>
+                <p>Category II refers to intermediate income countries and is the Consensus classification based on GNP per capita income.<br />
+                </p>
+
+                <h4><b>Category III Countries</b></h4>
+                <p>Category III refers to relatively under-developed countries and is the Consensus classification based on GNP per capita income.<br />
+                </p>
+
+                <h4><b>Central Ledger</b></h4>
+                <p>A central ledger refers to a ledger maintained by a central agency. <br />
+                </p>
+
+                <h4><b>Claiming Bank</b></h4>
+                <p>The bank entitled to claim reimbursement of sums it has paid in respect of a payment, deferred payment, acceptance or negotiation that it has carried out under the credit.<br />
+                </p>
+
+                <h4><b>Coinjoin</b></h4>
+                <p>An anonymization strategy that protects the privacy of Bitcoin users when they conduct transactions with each other. Coinjoin requires multiple parties to jointly sign on an agreement to mix their coins when engaging in separate Bitcoin transactions.<br />
+                </p>
+
+                <h4><b>Collecting Bank</b></h4>
+                <p>The bank in the buyer’s (drawee’s) country to whom the collection order and documents are directed.<br />
+                </p>
+
+                <h4><b>Collecting Order</b></h4>
+                <p>The set of instructions given to the remitting bank by the principal in a transaction. The remitting bank relays the collecting order to the collecting bank.<br />
+                </p>
+
+                <h4><b>Commercial Letter of Credit</b></h4>
+                <p>A name sometimes given to a variant of documentary credit under which the credit is negotiable by any bank. The issuing bank requires all drawings to be noted on the credit document.<br />
+                </p>
+
+                <h4><b>Confirmation</b></h4>
+                <p>A confirmation means that the blockchain transaction has been verified by the network. This happens through a process
+                  known as mining, in a proof-of-work system (e.g. Bitcoin). Once a transaction is <i>confirmed</i>, it cannot be reversed
+                  or double spent. The more confirmations a transaction has, the harder it becomes to perform a double spend attack.<br
+                  />
+                </p>
+
+                <h4><b>Confirming Bank</b></h4>
+                <p>A bank which adds its own independent payment undertaking to that of the issuing bank. The confirming bank is normally in the beneficiary’s country. The confirmation protects the beneficiary against the issuing bank defaulting, and political risk with regard to the country in which the issuing bank is situated.<br />
+                </p>
+
+                <h4><b>Consensus Process</b></h4>
+                <p>The process a group of peers responsible for maintaining a distributed ledger use to reach consensus on the ledger’s
+                  contents. <br />
+                </p>
+
+                <h4><b>Consensus Point</b></h4>
+                <p>A point – either in time, or defined in terms of a set number or volume of records to be added to the ledger – where
+                  peers meet to agree the state of the ledger.<br />
+                </p>
+
+                <h4><b>Crowdfunding</b></h4>
+                <p>There are two types of crowdfunding: rewards-based crowdfunding and equity-based crowdfunding. The first relates to platforms like Kickstarter or Indiegogo, where startups raise pledges and in return offer buy-in incentives for anything they produce. Equity crowdfunding is a more recent phenomenon where pledgers are actually investors that receive a small share in the business in return for their contributions.</p>
+
+                <h4><b>Cryptocurrency</b></h4>
+                <p>A form of digital currency based on mathematics, where encryption techniques are used to regulate the generation of
+                  units of currency and verify the transfer of funds. Furthermore, cryptocurrencies operate independently of a central
+                  bank.<br />
+                </p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexd">
+			    <h2><b>D</b></h2><div class="space"></div>
+                <h4><b>Deferred Letters of Credit</b></h4>
+                <p>A credit providing for payment at a determinable future date following the presentation of documents which do not include a draft.<br />
+                </p>
+
+                <h4><b>Digital Commodity</b></h4>
+                <p>A digital commodity is a scarce, electronically transferrable, intangible, with a market value.<br />
+                </p>
+
+                <h4><b>Digital Identity</b></h4>
+                <p>A digital identity is an online or networked identity adopted or claimed in cyberspace by an individual, organization,
+                  or electronic device.<br />
+                </p>
+
+                <h4><b>Digital native</b></h4>
+                <p>A digital native refers to a person who has grown up with the availability, and use of, digital technology. This group includes millennials, or post-millennials AKA Generation Z.</p>
+
+                <h4><b>Digital wallet</b></h4>
+                <p>This refers to any electronic device or application that allows an individual to make electronic transactions. This can be either using cryptocurrency or real money which is often pre-loaded onto a digital account.</p>
+
+                <h4><b>DRaaS</b></h4>
+                <p>This is a term that has emerged in the area of cyber security and means Disaster Recovery-as-a-Service. It refers to the hosting of physical or virtual servers by a third party as a security measure to protect a business’ infrastructure in case of a cyber attack, natural disaster, or man-made catastrophe.</p>
+
+                <h4><b>Distributed Ledger</b></h4>
+                <p>Distributed ledgers are a type of database that are spread across multiple sites, countries or institutions. Records
+                  are stored one after the other in a continuous ledger. Distributed ledger data can be either "permissioned" or "unpermissioned"
+                  to control who can view it. <br />
+                </p>
+
+                <h4><b>Difficulty</b></h4>
+                <p>Difficulty, in Proof-of-Work mining, is how hard it is to verify blocks in a blockchain network. In the Bitcoin network,
+                  the difficulty of mining adjusts verifying blocks every 2016 blocks. This is to keep block verification time at ten
+                  minutes.<br />
+                </p>
+
+                <h4><b>Double Spend</b></h4>
+                <p>Double spend refers to a scenario, in the Bitcoin network, where someone tries to send a bitcoin transaction to two
+                  different recipients at the same time. However, once a bitcoin transaction is confirmed, it makes it nearly impossible
+                  to double spend it. The more confirmations that a particular transaction has, the harder it becomes to double spend
+                  the bitcoins.<br />
+                </p>
+
+                <h4><b>Digital Copy</b></h4>
+                <p>A duplicate record of every confirmed Bitcoin transaction that has taken place over a peer-to-peer network. Digital copy is one of the security features of the Bitcoin platform that was implemented in order to tackle the problem of double spending.<br />
+                </p>
+
+                <h4><b>Distribution Stock</b></h4>
+                <p>Distribution stock refers to a large block of a security which is sold into the market gradually in smaller blocks rather than in a single large block. This is typically done to avoid inundating the market with the security and driving down the average selling price of the securities.<br />
+                </p>
+
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexe">
+			    <h2><b>E</b></h2><div class="space"></div>
+                <h4><b>Ethereum</b></h4>
+                <p>Ethereum is a blockchain-based cryptocurrency platform that runs Smart contracts. Its was originally authored by Vitalik Buterin and Gavin Wood.</p>
+
+                <h4><b>Ether</b></h4>
+                <p>The currency unit of Ethereum. It is used to pay for computational services on the Ethereum network.</p>
+
+                <h4><b>Execution</b></h4>
+                <p>An execution is the completion of a buy or sell order for a security. The execution of an order happens when it is completely filled, not when it is placed by the investor. When the investor places the trade, it goes to a broker, who then determines the best way for it to be executed.<br />
+                </p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexf">
+			    <h2><b>F</b></h2><div class="space"></div>
+                <h4><b>Fourth Market</b></h4>
+                <p>The trading of exchange-listed securities between institutions on a private over-the-counter computer network, rather than over a recognized exchange such as the New York Stock Exchange (NYSE) or Nasdaq. Trades between institutions will often be made in large blocks and without a broker, allowing the institutions to avoid brokerage fees.<br />
+                </p>
+
+                <h4><b>Fating</b></h4>
+                <p>Querying the status of a collection in relation to the exporter’s instructions to the remitting bank.<br />
+                </p>
+
+                <h4><b>Force Majeure</b></h4>
+                <p>Events over which none of the parties to a transaction has control or influence (acts of God).<br />
+                </p>
+
+                <h4><b>Front End Finance (Downpayment Financing)</b></h4>
+                <p>A commercial loan under which separate credit facilities are provided to finance the downpayment and/or other direct payments not covered under a buyer or supplier credit financing.<br />
+                </p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexg">
+			    <h2><b>G</b></h2><div class="space"></div>
+                <h4><b>Genesis Block</b></h4>
+                <p>The very first block in a block chain.<br />
+                </p>
+
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexh">
+			    <h2><b>H</b></h2><div class="space"></div>
+                <h4><b>Hedging</b></h4>
+                <p>Reducing or mitigating risk, for example protecting against adverse foreign-exchange movement.<br />
+                </p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexi">
+			    <h2><b>I</b></h2><div class="space"></div>
+                <h4><b>ICC (International Chamber of Commerce)</b></h4>
+                <p>The voice of world business championing the global economy as a force for economic growth, job creation and prosperity. Because national economies are now so closely interwoven, government decisions have far stronger international repercussions than in the past. ICC activities cover a broad spectrum, from arbitration and dispute resolution to making the case for open trade and the market economy system, business self-regulation, fighting corruption or combating commercial crime.</p>
+
+                <h4><b>Issuing Bank</b></h4>
+                <p>The bank which issues a documentary credit. It may also be referred to as an opening bank.</p>
+
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexj">
+			    <h2><b>J</b></h2><div class="space"></div>
+                <h4><b>Junctim</b></h4>
+                <p>See forward purchase.</p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexk">
+				<h2><b>K</b></h2><div class="space"></div>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexl">
+			    <h2><b>L</b></h2><div class="space"></div>
+                <h4><b>Ledger</b></h4>
+                <p>An append-only record store, where records are immutable and may hold more general information than financial records.</p>
+
+                <h4><b>Line of Credit</b></h4>
+                <p>A buyer credit arrangement set up to finance multiple contracts subsequently entered into and nominated to the lender by the buyer and accepted by the lender as eligible for finance under the line. Lines of credit may either be for miscellaneous capital goods purchases (usually known as general purpose lines of credit) or for multiple contracts associated with one project (usually known as project lines of credit).</p>
+
+                <h4><b>Litecoin</b></h4>
+                <p>A peer-to-peer cryptocurrency based on the Scrypt proof-of-work network. Sometimes referred to as the <i>silver of bitcoin's gold</i>.
+                  <br />
+                </p>
+
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexm">
+			    <h2><b>M</b></h2><div class="space"></div>
+				<h4><b>Merkel Tree</b></h4>
+                <p>A Merkle tree is a hash based data structure that is a generalization of the hash list. It is a tree structure in which each leaf node is a hash of a block of data, and each non-leaf node is a hash of its children. Typically, Merkle trees have a branching factor of 2, meaning that each node has up to 2 children.<br />
+                </p>
+				
+                <h4><b>Mining</b></h4>
+                <p>The process by which transactions are verified and added to a blockchain. This process of solving cryptographic problems
+                  using computing hardware also triggers the release of cryptocurrencies. <br />
+                </p>
+
+                <h4><b>Multi Signature</b></h4>
+                <p>Multi-signature (<i>multisig</i>) addresses allow multiple parties to require more than one key to authorize a transaction.
+                  The needed number of signatures is agreed at the creation of the address. Multi signature addresses have a much greater
+                  resistance to theft.<br />
+                </p>
+
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexn">
+			    <h2><b>N</b></h2><div class="space"></div>
+                <h4><b>Negotiating Bank</b></h4>
+                <p>A bank buying the documents which obtains the right to deal with the documents any way it must to ensure repayment.<br />
+                </p>
+
+                <h4><b>Nominated Bank</b></h4>
+                <p>A bank designated by the issuing bank to which the beneficiary presents its documents and from which it obtains payment of the credit sum. Depending on the terms of the credit, this may be the issuing bank, the advising bank or some other bank.<br />
+                </p>
+				
+				        <h4><b>Nonce</b></h4>
+                <p>Number used once (Nuonce) <br />
+                </p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexo">
+			    <h2><b>O</b></h2><div class="space"></div>
+                <h4><b>Off-Ledger Currency</b></h4>
+                <p>A currency minted off-ledger and used on-ledger. An example of this would be using distributed ledgers to manage a
+                  national currency.<br />
+                </p>
+
+                <h4><b>On-Ledger Currency</b></h4>
+                <p> A currency minted on-ledger and used on-ledger. An example of this would be the cryptocurrency, Bitcoin.<br />
+                </p>
+
+                <h4><b>Open Account Trading</b></h4>
+                <p>Trading in which the importer pays after the exporter has dispatched the goods.<br />
+                </p>
+
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexp">
+			    <h2><b>P</b></h2><div class="space"></div>
+                <h4><b>P2P</b></h4>
+                <p>Peer-to-peer (<i>P2P</i>) refers to the decentralized interactions that happen between at least two parties in a highly
+                  interconnected network. P2P participants deal directly with each other through a single mediation point.
+                  <br />
+                </p>
+
+                <h4><b>Participant</b></h4>
+                <p>An actor who can access the ledger: read records or add records to. <br />
+                </p>
+
+                <h4><b>Peer</b></h4>
+                <p>An actor that shares responsibility for maintaining the identity and integrity of the ledger. <br />
+                </p>
+
+                <h4><b>Permissioned Ledger</b></h4>
+                <p>A permissioned ledger is a ledger where actors must have permission to access the ledger. Permissioned ledgers may
+                  have one or many owners. When a new record is added, the ledger’s integrity is checked by a limited consensus process.
+                  This is carried out by trusted actors — government departments or banks, for example — which makes maintaining a
+                  shared record much simpler that the consensus process used by unpermissioned ledgers. Permissioned block chains provide
+                  highly-verifiable data sets because the consensus process creates a digital signature, which can be seen by all parties.
+                  A permissioned ledger is usually faster than an unpermissioned ledger.<br />
+                </p>
+
+                <h4><b>Private Currency</b></h4>
+                <p>A currency issued by a private individual or firm, typically secured against uninsured assets. <br />
+                </p>
+
+                <h4><b>Private Key</b></h4>
+                <p>A private key is a string of data that shows you have access to bitcoins in a specific wallet. Private keys can be
+                  thought of as a password; private keys must never be revealed to anyone but you, as they allow you to spend the bitcoins
+                  from your bitcoin wallet through a cryptographic signature.<br />
+                </p>
+
+                <h4><b>Proof-of-Stake</b></h4>
+                <p>An alternative to the proof-of-work system, in which your existing stake in a cryptocurrency (the amount of that currency
+                  that you hold) is used to calculate the amount of that currency that you can mine.<br />
+                </p>
+
+                <h4><b>Proof-of-Work</b></h4>
+                <p>A system that ties mining capability to computational power. Blocks must be hashed, which is in itself an easy computational
+                  process, but an additional variable is added to the hashing process to make it more difficult. When a block is successfully
+                  hashed, the hashing must have taken some time and computational effort. Thus, a hashed block is considered proof
+                  of work.<br />
+                </p>
+
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexq">
+			    <h2><b>Q</b></h2><div class="space"></div>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexr">
+			    <h2><b>R</b></h2><div class="space"></div>
+                <h4><b>Ripple</b></h4>
+                <p>A payment network built on distributed ledgers that can be used to transfer any currency. The network consists of payment
+                  nodes and gateways operated by authorities. Payments are made using a series of IOUs, and the network is based on
+                  trust relationships.<br />
+                </p>
+
+                <h4><b>Reimbursing Bank</b></h4>
+                <p>A bank designated by the issuing bank from which an authorised bank that has made a payment under the credit may obtain reimbursement.<br />
+                </p>
+
+                <h4><b>Remitting Bank</b></h4>
+                <p>The bank instructed by the exporter/seller in the handling of collections. The remitting bank will, in its turn, instruct the collecting bank.<br />
+                </p>
+
+                <h4><b>Replicated Ledger</b></h4>
+                <p>A ledger with one master (authoritative) copy of the data, and many slave (non-authoritative) copies.<br />
+                </p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexs">
+			    <h2><b>S</b></h2><div class="space"></div>
+                <h4><b>SaaS</b></h4>
+                <p>The means Software-as-a-Service. It is a software distribution model used my many fintech software startups. It basically means applications  that are hosted by the vendor on the cloud and can be accessed by the users online for a subscription fee, as opposed to users buying the software outright in a hard format like a CD.</p>
+
+                <h4><b>Scrypt</b></h4>
+                <p>An alternative proof of work system to SHA-256, designed to be particularly friendly to CPU and GPU miners, while offering
+                  little advantage to ASIC miners.<br />
+                </p>
+
+                <h4><b>SHA 256</b></h4>
+                <p>The cryptographic function used as the basis for bitcoin’s proof of work system.<br />
+                </p>
+
+                <h4><b>Smart Contracts</b></h4>
+                <p>Smart contracts are contracts whose terms are recorded in a computer language instead of legal language. Smart contracts
+                  can be automatically executed by a computing system, such as a suitable distributed ledger system.<br />
+                </p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indext">
+			    <h2><b>T</b></h2><div class="space"></div>
+                <h4><b>Tokenless Ledger</b></h4>
+                <p>A tokenless ledger refers to a distributed ledger that doesn’t require a native currency to operate.<br />
+                </p>
+
+                <h4><b>Transaction Block</b></h4>
+                <p>A collection of transactions on the bitcoin network, gathered into a block that can then be hashed and added to the
+                  blockchain.<br />
+                </p>
+
+                <h4><b>Transaction Fee</b></h4>
+                <p>A small fee imposed on some transactions sent across the bitcoin network. The transaction fee is awarded to the miner
+                  that successfully hashes the block containing the relevant transaction.<br />
+                </p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexu">
+			    <h2><b>U</b></h2><div class="space"></div>
+                <h4><b>Unpermissioned ledgers</b></h4>
+                <p>Unpermissioned ledgers such as Bitcoin have no single owner — indeed, they cannot be owned. The purpose of an unpermissioned
+                  ledger is to allow anyone to contribute data to the ledger and for everyone in possession of the ledger to have identical
+                  copies. This creates censorship resistance, which means that no actor can prevent a transaction from being added
+                  to the ledger. Participants maintain the integrity of the ledger by reaching a consensus about its state<br />
+                </p>
+
+                <h4><b>Uniform Commercial Code</b></h4>
+                <p>The Uniform Commercial Code (UCC) provides comprehensive standard rules of commercial law that are adopted at state level by nearly all the individual states in the US. The UCC is drafted by the National Conference of Commissioners on Uniform State Laws in coordination with the American Law Institute.<br />
+                </p>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexv">
+			    <h2><b>V</b></h2><div class="space"></div>
+                <h4><b>Validity Date</b></h4>
+                <p>The date on which a bond or guarantee expires.<br />
+
+                  <h4><b>Vostro Account</b></h4>
+                <p>Used to facilitate international payments, this is the account of a bank with an agent or correspondent in a foreign country which is recorded in the currency of the bank’s own country.<br />
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexw">
+			    <h2><b>W</b></h2><div class="space"></div>
+                <h4><b>Warehouse Receipts</b></h4>
+                <p>Warehouse receipts provide evidence that specified physical assets of a creditor are being held in storage. They may be used as a form of guarantee in countertrade operations.<br />
+
+                <h4><b>World Trade Organisation (WTO)</b></h4>
+                <p>The WTO is the only global international organization dealing with the rules of trade between nations. At its heart are the WTO agreements, negotiated and signed by the bulk of the world’s trading nations and ratified in their parliaments. The goal is to help producers of goods and services, exporters, and importers conduct their business.<br />
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexx">
+			    <h2><b>X</b></h2><div class="space"></div>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexy">
+			    <h2><b>Y</b></h2><div class="space"></div>
+              </div>
+
+              <hr class="featurette-divider">
+              <div class="featurette" id="indexz">
+			    <h2><b>Z</b></h2><div class="space"></div>
+              </div>
+
+              </div>
+					</div>
+
+					<div id="tab7">
+						<h2 class="page-header">Implementation</h2>
+            <p> To address the pain points of supply chain finance, we propose</p>
+            <p> A system which is
+              <ul>
+                <li>distributed</li>
+                <li>decentralized (no banks, authority here)</li>
+                <li>to create and move tradeable digital tokens representing assets, currency, ownership etc .. </li>
+                <li>...across parties sharing a distributed ledger which is immutable and with ability to run Smart Contracts and validate against consensus by Proof-of-work</li><br/>
+                <li>Distributed trustable storage provided by BlockChain.</li>
+                <li>Distributed trustable calculations provided by Smart Contracts (Code which is executed)</li>
+                <li>Computing and mathematics work together to establish transparency, accuracy and trust. </li>
+                <li>It can be public and hence audited without need for central authority</li>
+              </ul>
+						</p>
+            <br/>
+            <p>
+              <h2>Factors and design considerations</h2>
+
+                <h4>Command Processor</h4>
+                <ul>
+                  <li>How to receive incoming transaction requests?</li>
+                  <li>How to order (and thus handle) otherwise conflicting requests?</li>
+                </ul>
+
+                <h4>A domain model</h4>
+                <ul>
+                  <li>How to authenticate and authorize a transaction?</li>
+                  <li>How to valid a transaction request for correctness, including 	concurrency conflicts?</li>
+                  <li>What are the state changes performed when a transaction is accepted?</li>
+                </ul>
+
+                <h4>A set of digital signature algorithms and methodologies</h4>
+                <ul>
+                  <li>How to hash, sign and verify transactions and other messages to achieve non-repudiation of data and messages?</li>
+                  <li>How to uniquely and reproducibly perform binary serialization of domain messages so they can be hashed and signed?</li>
+                </ul>
+
+                <h4>A transaction ledger format and store</h4>
+                <ul>
+                    <li>How is the transaction ledger represented and distributed?</li>
+                </ul>
+
+                <h4>A means to “chain” transactions (or blocks of transactions)</h4>
+                <ul>
+                    <li>How to evidence that the transaction ledger has not been tampered with?</li>
+                </ul>
+
+                <h4>A means for advertising and distributing state generated by the transactions</h4>
+                <ul>
+                    <li>How does the public learn what the state of the world is?</li>
+                </ul>
+            </P>
+					</div>
+
+					<div id="tab8">
+						<h2 class="page-header">Code Spikes</h2>
+						<p>Content for Code Spikes goes here
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- The scroll to top feature -->
+		<div class="scroll-top-wrapper ">
+			<span class="scroll-top-inner">
+					<i class="fa fa-2x fa-arrow-circle-up"></i>
+				</span>
+		</div>
+
+		<div class="footer">
+			<div class="row">
+				<ul class="nav nav-pills nav-justified">
+					<li><a target="_blank" href="https://www.cognizant.com">©2017 Cognizant, all rights reserved</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="dialog" >
+			<p>
+				<ul>
+					<li><a target="_blank" href="https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial" class="hrefClass" >Ethereum </a> is a open blockchain platform for building decentralized applications.</li><br/>
+					<li><a target="_blank" href="https://solidity.readthedocs.io/en/develop/" class="hrefClass" >Solidity</a> is a contract-oriented, high-level language whose syntax is similar to that of JavaScript and it is designed to target the Ethereum Virtual Machine (EVM).</li><br/>
+					<li><a target="_blank" href="http://developers.blockapps.net/dashboard/quick-starts" class="hrefClass" >Blockapps</a> is the leading provider of Ethereum blockchain development solutions. Our client, written in Haskell, provides a highly scalable Ethereum compliant blockchain with a industry standard RESTful API.</li><br/>
+					<li><a target="_blank" href="https://blog.bigchaindb.com/what-is-bigchaindb-38aff031bf51" class="hrefClass" >BigChainDB</a>  s a scalable blockchain database. It's designed to merge the best of two worlds: the "traditional" distributed database world and the "traditional" blockchain world</li><br/>
+					<li><a target="_blank" href="https://storj.io/index.html" class="hrefClass" >Distributed Decentralized Storage</a> Storj is blockchain-based, end-to-end encrypted, distributed object storage, where only you have access to your data.</li><br/>
+          <li><a target="_blank" href="https://eprint.iacr.org/2015/675.pdf" class="hrefClass" >Cryptography </a> secures the global information infrastructure by encrypting data flows and protecting data from third-party interception.</li><br/>
+					<li><a target="_blank" href="http://truffleframework.com/" class="hrefClass" >Truffle</a> is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.</li><br/>
+			 </ul>
+			</p>
+		</div>
+
+		<div id="dialogreact" >
+			<p>
+				<ul>
+					<li><a target="_blank" href="https://facebook.github.io/react/" class="hrefClass" >React JS</a> is an open-source JavaScript library for building user interfaces. It is maintained by Facebook, Instagram and a community of individual developers and corporations.</li><br/>
+					<li><a target="_blank" href="https://medium.com/mofed/react-redux-architecture-overview-7b3e52004b6e" class="hrefClass" >React With Redux </a>  is a predictable state container for JavaScript apps using client as ReactJS.</li><br/>
+        </ul>
+				<div>
+				<div class="marginLeft"><b>Please find below links about React.</b></div><br/>
+					<div class="marginLeft"><a target="_blank" href="https://app.pluralsight.com/library/courses/react-redux-react-router-es6/" class="hrefClass" >https://app.pluralsight.com/library/courses/react-redux-react-router-es6</a></div></br>
+					<div class="marginLeft"><a target="_blank" href="https://app.pluralsight.com/library/courses/react-fundamentals" class="hrefClass" >https://app.pluralsight.com/library/courses/react-fundamentals</a></div></br>
+					<div class="marginLeft"><a target="_blank" href="https://survivejs.com/webpack/preface/" class="hrefClass" >https://survivejs.com/webpack/preface/</a></div></br>
+					<div class="marginLeft"><a target="_blank" href="https://survivejs.com/react/introduction/" class="hrefClass" >https://survivejs.com/react/introuction</a></div></br>
+				</div>
+			</p>
+		</div>
+	</body>
+</html>

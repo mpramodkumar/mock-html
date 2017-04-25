@@ -1,0 +1,173 @@
+/* Variables for this style */
+
+:root {
+  --main-color: #eeeeee;
+  --white-color: #fff;
+  --border-color: #101010;
+  --bg-color: #f5f5f5;
+  --nav-bg-color: #428bca;
+  --body-font: "Interstate Lt";
+}
+/*
+ * Base structure
+ */
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+body {
+  padding-top: 50px;
+  font-size: 1.5em;
+  line-height: 2;
+  font: 16px var(--body-font);
+}
+h1 {
+  margin-bottom: 20px;
+}
+#tabs li b {
+  padding-left: 0.5em;
+}
+.idea-header {
+  color: var(--main-color);
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border-color: var(--border-color);
+  padding: 7px;
+}
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--main-color);
+}
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+
+.navbar-fixed-top {
+  border: 0;
+}
+/*
+ * Sidebar
+ */
+/* Hide for mobile, show later */
+
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+
+    background-color: var(--bg-color);
+    border-right: 1px solid var(--main-color);
+    margin-top: 1.5em;
+  }
+}
+/* Sidebar navigation */
+
+.nav-sidebar {
+  margin-right: -21px;
+  /* 20px padding + 1px border */
+
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: var(--white-color);
+  background-color: var(--nav-bg-color);
+}
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+.scroll-top-wrapper {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  text-align: center;
+  z-index: 99999999;
+  background-color: #777777;
+  color: var(--main-color);
+  width: 50px;
+  height: 48px;
+  line-height: 48px;
+  right: 30px;
+  bottom: 30px;
+  padding-top: 2px;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.scroll-top-wrapper:hover {
+  background-color: #888888;
+}
+.scroll-top-wrapper.show {
+  visibility: visible;
+  cursor: pointer;
+  opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+  line-height: inherit;
+}
+.container {
+  width: 100% !important;
+}
+.jumbotron {
+  background: #fff;
+  height: 10px;
+  width: 100% !important;
+}
+#navigate{
+  letter-spacing: -2px;
+}
+.hrefClass{
+  color: #337ab7 !important;
+  text-decoration: none;
+}
+.pointer{
+  cursor: pointer;
+  text-decoration: none;
+}
+.marginLeft{
+  margin-left: 2.3em;
+}
+.ui-widget-overlay {
+  background: #1f1f1f !important;
+  opacity: 1.0 !important;
+}
+.space { margin-top: 50px; }
